@@ -2,7 +2,6 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { BottomNavigation } from "react-native-paper";
 import { CommonActions } from "@react-navigation/native";
-import HomeScreen from "../screens/home";
 import TransactionsScreen from "../screens/transactions";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import MainNavigation from "./MainNavigation";
@@ -69,13 +68,13 @@ const AppBottomNavigation = () => {
         }}
       />
       <Tab.Screen
-        name="Settings"
+        name="Transactions"
         component={TransactionsScreen}
         options={{
           headerShown: true,
-          tabBarLabel: "Settings",
+          tabBarLabel: "Transactions",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="md-settings-outline" size={size} color={color} />
+            <Ionicons name="md-list-outline" size={size} color={color} />
           ),
         }}
       />

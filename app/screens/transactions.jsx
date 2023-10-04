@@ -14,12 +14,12 @@ const TransactionsScreen = ({ route }) => {
       amount: 200,
     },
     {
-      id: 2,
+      id: 3,
       pocket: "Fuel",
       amount: 350,
     },
     {
-      id: 3,
+      id: 4,
       pocket: "Fuel",
       amount: 1050,
     },
