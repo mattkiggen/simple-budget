@@ -1,7 +1,12 @@
 import { StyleSheet, Text, View } from "react-native";
 import { Button, ProgressBar, MD3Colors } from "react-native-paper";
 
-const Envelope = ({ name, currentAmount, totalAmount }) => {
+const Pocket = ({
+  name,
+  currentAmount,
+  totalAmount,
+  color = MD3Colors.neutral10,
+}) => {
   return (
     <View style={styles.container}>
       <View style={styles.textContainer}>
@@ -13,7 +18,7 @@ const Envelope = ({ name, currentAmount, totalAmount }) => {
       <ProgressBar
         style={{ borderRadius: 8, marginTop: 8 }}
         progress={currentAmount / totalAmount}
-        color={MD3Colors.neutral10}
+        color={color}
       />
     </View>
   );
@@ -37,4 +42,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Envelope;
+export default Pocket;

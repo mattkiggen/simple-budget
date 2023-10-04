@@ -8,7 +8,7 @@ const AddPocketScreen = () => {
   return (
     <BaseScreen>
       <View>
-        <Text>Hell from add pocket</Text>
+        <Text>Enter in your new pocket details</Text>
         <TextInput
           label="Name"
           mode={"outlined"}
@@ -38,6 +38,7 @@ const AddPocketScreen = () => {
         />
         <Button
           mode={"contained-tonal"}
+          style={{ marginTop: 16 }}
           onPress={() => console.log("something")}
         >
           Save pocket

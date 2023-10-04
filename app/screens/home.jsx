@@ -4,8 +4,8 @@ import { FlashList } from "@shopify/flash-list";
 import { Button } from "react-native-paper";
 
 import BaseScreen from "./base";
-import Envelope from "../components/envelope";
 import Constants from "../constants";
+import PocketListItem from "../components/PocketListItem";
 
 const HomeScreen = ({ navigation }) => {
   const [envelopes, setEnvelopes] = useState([
@@ -14,18 +14,21 @@ const HomeScreen = ({ navigation }) => {
       name: "Food",
       totalAmount: 2000.0,
       currentAmount: 400.0,
+      color: "#222",
     },
     {
       id: 2,
       name: "Fuel",
       totalAmount: 3000.0,
       currentAmount: 1400.0,
+      color: "green",
     },
     {
       id: 1,
       name: "Jetbrains",
       totalAmount: 522.0,
       currentAmount: 522.0,
+      color: "blue",
     },
   ]);
 
@@ -34,10 +37,14 @@ const HomeScreen = ({ navigation }) => {
       <View style={styles.list}>
         <FlashList
           renderItem={({ item }) => (
-            <Envelope
-              name={item.name}
-              currentAmount={item.currentAmount}
-              totalAmount={item.totalAmount}
+            <PocketListItem
+              pocket={item}
+              onPress={() =>
+                navigation.navigate({
+                  name: Constants.routes.transactions,
+                  params: { pocket: item.name },
+                })
+              }
             />
           )}
           data={envelopes}

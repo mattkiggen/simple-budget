@@ -6,6 +6,8 @@ import HomeScreen from "./app/screens/home";
 import Constants from "./app/constants";
 import { PaperProvider, Portal, FAB } from "react-native-paper";
 import AddPocketScreen from "./app/screens/add-pocket";
+import TransactionsScreen from "./app/screens/transactions";
+import AppBottomNavigation from "./app/components/AppBottomNavigation";
 
 const Stack = createNativeStackNavigator();
 
@@ -13,18 +15,7 @@ export default function App() {
   return (
     <PaperProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName={Constants.routes.home}>
-          <Stack.Screen
-            name={Constants.routes.home}
-            component={HomeScreen}
-            options={{ title: "Home" }}
-          />
-          <Stack.Screen
-            name={Constants.routes.addPocket}
-            component={AddPocketScreen}
-            options={{ title: "Add pocket" }}
-          />
-        </Stack.Navigator>
+        <AppBottomNavigation />
       </NavigationContainer>
     </PaperProvider>
   );
